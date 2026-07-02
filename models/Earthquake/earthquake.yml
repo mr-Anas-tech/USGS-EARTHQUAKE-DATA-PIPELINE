@@ -1,0 +1,6 @@
+sources:
+  - name: Earthquake_raw
+    database: dbt-learning-493706
+    schema: Earthquake_raw
+    tables:
+      - name: raw_usgs_data
