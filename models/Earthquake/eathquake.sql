@@ -9,7 +9,7 @@ cleaned_eq as (
         cast(id as string) as earthquake_id,
         cast(properties_type as string) as event_type,
         cast(properties_mag as float64) as magnitude,
-        cast(properties_magType as string) as magnitude_type,
+        cast(properties_magtype as string) as magnitude_type,
         cast(properties_place as string) as place_description,
         cast(properties_title as string) as event_title,
         cast(properties_status as string) as review_status,
