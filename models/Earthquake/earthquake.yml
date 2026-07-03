@@ -1,6 +1,17 @@
+version: 2
+
 sources:
   - name: Earthquake_raw
     database: dbt-learning-493706
     schema: Earthquake_raw
     tables:
       - name: raw_usgs_data
+        config:
+          loaded_at_field: timestamp_millis(cast(properties_updated as int64)) 
+          freshness:
+            warn_after:
+              count: 5
+              period: day
+            error_after:
+              count: 10
+              period: day
