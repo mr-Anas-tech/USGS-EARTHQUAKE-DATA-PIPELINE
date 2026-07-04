@@ -1,5 +1,5 @@
 with staging_data as (
-    select * from {{ ref('eathquake') }} -- Aapke staging model ka ref
+    select * from {{ ref('eathquake') }} 
 ),
 
 extracted_coordinates as (
