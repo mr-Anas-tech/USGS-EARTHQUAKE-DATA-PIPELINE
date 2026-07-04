@@ -12,8 +12,9 @@ cleaned_eq as (
     select
         cast(id as string) as earthquake_id,
         cast(properties_type as string) as event_type,
-        cast(properties_mag as float64) as magnitude,
-        cast(properties_magType as string) as magnitude_type,
+        coalesce(cast(properties_mag as float64), 0) as magnitude,
+        coalesce(cast(properties_magType as string), 'Unknown') as magnitude_type,
+        
         cast(properties_place as string) as place_description,
         cast(properties_title as string) as event_title,
         cast(properties_status as string) as review_status,
@@ -27,10 +28,10 @@ cleaned_eq as (
         cast(properties_sig as int64) as significance_score,
         cast(properties_net as string) as network_id,
         cast(properties_code as string) as network_event_code,
-        cast(properties_nst as int64) as total_stations_used,
-        cast(properties_dmin as float64) as min_station_distance,
-        cast(properties_rms as float64) as rms_travel_time,
-        cast(properties_gap as float64) as azimuthal_gap,
+        coalesce(cast(properties_nst as int64), 0) as total_stations_used,
+        coalesce(cast(properties_dmin as float64), 0) as min_station_distance,
+        coalesce(cast(properties_rms as float64), 0) as rms_travel_time,
+        coalesce(cast(properties_gap as float64), 0) as azimuthal_gap,
         cast(geometry_type as string) as geometry_type,
         geometry_coordinates as coordinates_array
 

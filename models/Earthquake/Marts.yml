@@ -1,0 +1,58 @@
+version: 2
+
+models:
+  - name: dim_earthquake_locations
+    description: "Geographical dimension table containing locations, exact spatial coordinates, and depth categories of seismic events for Power BI mapping dashboards."
+    columns:
+      - name: earthquake_id
+        description: "Primary key for the location dimension."
+        tests:
+          - unique
+          - not_null
+
+      - name: estimated_location_country_or_state
+        description: "Parsed regional state or country extracted dynamically via regex/array splits from the primary USGS location description."
+
+      - name: depth_category
+        description: "Energy dispersion classification based on seismic depth (Shallow, Intermediate, Deep)."
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['Shallow (0-70 km)', 'Intermediate (70-300 km)', 'Deep (> 300 km)']
+
+  - name: fct_earthquake_events
+    description: "Central facts table capturing numerical magnitudes, reporting delay KPIs, and critical structural warning flags for data analysis downstream."
+    columns:
+      - name: earthquake_id
+        description: "Foreign key linking directly to the dim_earthquake_locations dimension table."
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_earthquake_locations')
+                field: earthquake_id
+
+      - name: magnitude
+        description: "Numerical value indicating seismic energy score."
+        tests:
+          - not_null
+
+      - name: has_tsunami_risk
+        description: "Indicator flag capturing high-risk maritime disruption events (1 = Active Risk, 0 = Safe)."
+      - name: magnitude_severity_class
+        description: "Categorical tier dividing earthquakes by intensity thresholds."
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['Micro/Minor (< 3.0)', 'Light/Moderate (3.0 - 4.9)', 'Strong/Strong (5.0 - 6.9)', 'Major/Great (>= 7.0)']
+
+      - name: risk_profile_flag
+        description: "Combined evaluation indicator highlighting immediate action requirements for state safety deployment."
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['Critical High Risk', 'Elevated Risk', 'Standard Monitoring']
+
+      - name: pipeline_reporting_delay_minutes
+        description: "Pipeline optimization metric measuring ingestion lagging (Time window between raw crust shock and warehouse sync)."
