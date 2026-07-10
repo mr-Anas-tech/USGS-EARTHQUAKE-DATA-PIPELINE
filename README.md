@@ -366,21 +366,6 @@ models:
           - unique
           - not_null
 
-<img width="1327" height="712" alt="Screenshot 2026-07-10 165712" src="https://github.com/user-attachments/assets/40b68668-af9d-4f9e-9894-42f0a0a3fc9c" />
-
-<img width="1515" height="542" alt="Screenshot 2026-07-10 170844" src="https://github.com/user-attachments/assets/41358ee5-5c59-46cf-8f94-e842cf7d7169" />
-
-<img width="1392" height="760" alt="Screenshot 2026-07-10 170939" src="https://github.com/user-attachments/assets/dffb2e89-b0f3-48f5-aa12-991726e72c83" />
-
-<img width="1791" height="667" alt="Screenshot 2026-07-10 170811" src="https://github.com/user-attachments/assets/1621b258-7d1b-4cb3-9f7b-3e79422adcec" />
-
-<img width="1846" height="772" alt="Screenshot 2026-07-10 165218" src="https://github.com/user-attachments/assets/9275ca33-7a7b-43ce-8657-e57abb4c8ff1" />
-
-
-
-
-
-
 
 
 
@@ -420,13 +405,6 @@ models:
 * **Global Dashboard KPI Baselines:** The comprehensive tracking system establishes a final portfolio benchmark of 20K total earthquakes, an overall Average Magnitude of 1.67, an Average Depth of 21.40 km, and an Average Azimuthal Gap of 114.29.
 
 
-<img width="1311" height="737" alt="Screenshot 2026-07-10 174432" src="https://github.com/user-attachments/assets/ec19628a-4457-4bc8-909b-0dbd1697b1bf" />
-<img width="1094" height="373" alt="newplot (11)" src="https://github.com/user-attachments/assets/aa4a68ec-cf37-4dea-8bea-751f7e17315d" />
-<img width="1094" height="373" alt="newplot (10)" src="https://github.com/user-attachments/assets/ec0e873c-22d9-4c49-99fa-4d4e7f9bb7b9" />
-<img width="1094" height="373" alt="newplot (9)" src="https://github.com/user-attachments/assets/d7ecb723-7982-4755-bc75-a5d7fc9eae6f" />
-<img width="1094" height="373" alt="newplot (8)" src="https://github.com/user-attachments/assets/e9d80e66-2cd0-4bb2-8453-c80eacb0a0fb" />
-<img width="1094" height="385" alt="newplot (7)" src="https://github.com/user-attachments/assets/071e8204-3dd1-4ef2-a3ee-494a0e02b0d4" />
-
 
 
 ================================================================================
@@ -435,6 +413,7 @@ models:
 "This analytical pipeline integrates regional indicators, critical early-warning alerts, public responsiveness dynamics, network engineering health, and deep subsurface cross-tabulations into a unified seismic portfolio framework. The global monitoring grid establishes a definitive baseline of 20K total events with an overall average magnitude of 1.67 and a depth profile of 21.40 km. Crucially, the system flags a high-priority emergency signature consisting of 2 maximum-severity Red Alerts localized entirely within Venezuela, executed during an Hour 22 late-night temporal window. This high-risk exposure is accompanied by critical secondary clusters, including 2 Orange Alerts in China, 1 in the Philippines, and massive geographic volume concentration in Alaska, which drives over 6,017 events.
 
 Temporal analysis indicates that June acts as the primary data volume accelerator with 10,925 events, whereas May represents the highest environmental divergence, hosting 100% of the dataset's rare non-seismic anomalies (such as sonic booms and meteorite impacts). Diurnal logs show that event frequency peaks at Hour 8 (941 events) and drops to its minimum at Hour 22 (760 events). However, public panic criteria do not map directly to event volume; Hour 7 and Hour 15 stand out as massive citizen engagement anomalies, generating isolated spikes of 7,986 and 7,685 public reports respectively, driven by localized felt intensities rather than systemic frequency.
+From an engineering perspective, 91.5% of the ingestion pipeline maintains 'High Reliability (Solid)' status, although these robust nodes demonstrate an increased data processing latency (~6,672 minutes) relative to smaller, low-reliability stations. Subsurface cross-tabulations validate that structural hazards are profoundly shallow-centric, with 92.3% of all activity occurring between 0–70 km. This shallow crustal boundary houses the entire 17,311 minor baseline events as well as the dataset's most catastrophic exposures—including all 3 recorded Major/Great (>= 7.0 magnitude) earthquakes—confirming that deeper tectonic shifts (> 70 km) remain structurally stable, predictable, and low-risk."
 
 
 -----------------------------------------
@@ -442,5 +421,3 @@ DASHBOARD LINK:
 
 https://drive.google.com/file/d/1FKWmC0R2uss1NbE0DWJhK-g1vA_uBUBa/view?usp=sharing
 ---------------------------------------
-
-From an engineering perspective, 91.5% of the ingestion pipeline maintains 'High Reliability (Solid)' status, although these robust nodes demonstrate an increased data processing latency (~6,672 minutes) relative to smaller, low-reliability stations. Subsurface cross-tabulations validate that structural hazards are profoundly shallow-centric, with 92.3% of all activity occurring between 0–70 km. This shallow crustal boundary houses the entire 17,311 minor baseline events as well as the dataset's most catastrophic exposures—including all 3 recorded Major/Great (>= 7.0 magnitude) earthquakes—confirming that deeper tectonic shifts (> 70 km) remain structurally stable, predictable, and low-risk."
