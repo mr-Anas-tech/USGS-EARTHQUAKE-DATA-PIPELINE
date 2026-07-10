@@ -366,13 +366,15 @@ models:
           - unique
           - not_null
 
-<img width="1392" height="760" alt="Screenshot 2026-07-10 170939" src="https://github.com/user-attachments/assets/d6da8b8f-7ea3-4139-a9c0-35b23d5925de" />
-<img width="1515" height="542" alt="Screenshot 2026-07-10 170844" src="https://github.com/user-attachments/assets/3623b309-8234-432b-8ead-3acbf3260c64" />
-<img width="1515" height="542" alt="Screenshot 2026-07-10 170844" src="https://github.com/user-attachments/assets/0d407a6e-791d-4a34-803f-78086ab9eafe" />
-<img width="1791" height="667" alt="Screenshot 2026-07-10 170811" src="https://github.com/user-attachments/assets/7fed9344-decf-476d-b851-cc2326dbaebf" />
-<img width="1327" height="712" alt="Screenshot 2026-07-10 165712" src="https://github.com/user-attachments/assets/8225e7ef-b7a3-4d72-a448-70f2b2571860" />
-<img width="1846" height="772" alt="Screenshot 2026-07-10 165218" src="https://github.com/user-attachments/assets/e63cf0ee-945c-476a-adeb-0253188fbdf8" />
+<img width="1327" height="712" alt="Screenshot 2026-07-10 165712" src="https://github.com/user-attachments/assets/40b68668-af9d-4f9e-9894-42f0a0a3fc9c" />
 
+<img width="1515" height="542" alt="Screenshot 2026-07-10 170844" src="https://github.com/user-attachments/assets/41358ee5-5c59-46cf-8f94-e842cf7d7169" />
+
+<img width="1392" height="760" alt="Screenshot 2026-07-10 170939" src="https://github.com/user-attachments/assets/dffb2e89-b0f3-48f5-aa12-991726e72c83" />
+
+<img width="1791" height="667" alt="Screenshot 2026-07-10 170811" src="https://github.com/user-attachments/assets/1621b258-7d1b-4cb3-9f7b-3e79422adcec" />
+
+<img width="1846" height="772" alt="Screenshot 2026-07-10 165218" src="https://github.com/user-attachments/assets/9275ca33-7a7b-43ce-8657-e57abb4c8ff1" />
 
 
 
