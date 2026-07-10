@@ -1,4 +1,53 @@
-## 📥 Data Ingestion & Staging (API to MongoDB)
+================================================================================
+      DATA ENGINEERING ARCHITECTURE & PIPELINE SPECIFICATION
+================================================================================
+
+### 1. High-Level Data Flow Topology
+[USGS API] ---> (Python Ingestion) ---> [MongoDB Atlas (Staging)]
+                                              |
+                                       (Batch Extraction)
+                                              |
+                                              v
+[BigQuery Warehouse (Production/dbt)] <--- [Python ETL Script]
+   |             ^
+   |             | (Transformations & Models)
+   v             v
+[dbt (Cloud/Core)]
+   |
+   +---> [Python Environment (Exploratory Data Analysis / EDA)]
+   |
+   +---> [Power BI Desktop/Service (Executive Dashboards)]
+
+---
+
+### 2. Architectural Components & Deep Technical Breakdown
+
+#### Phase A: Real-Time Landing & Staging Layer
+* **Source System:** USGS (United States Geological Survey) Earthquake API exposing real-time GeoJSON data interfaces.
+* **Ingestion Runtime:** Light-weight Python script executing on an automated cron schedule or cloud function framework.
+* **Target Staging Store:** MongoDB (NoSQL Document Store).
+* **Strategic Justification (The Cost Mitigation Logic):**
+  > **Why MongoDB instead of directly hitting BigQuery continuously?** > Google BigQuery charges costs based on data scanning volume and active slot streaming usage. If your ingestion script frequently polls the USGS API and streams every small incremental batch directly into BigQuery multiple times an hour, it prevents efficient block caching, drastically inflates streaming insert fees, and spikes storage compute execution overhead. 
+  > 
+  > By placing MongoDB in front as an intermediate buffer layer:
+  > 1. You can write highly unstructured, varying GeoJSON payloads into Mongo instantly with zero schema penalty.
+  > 2. It acts as a zero-cost or fixed-cost landing zone that handles rapid API poll cycles without inflating BigQuery compute bills.
+
+#### Phase B: Enterprise Data Warehousing & Transformation Layer
+* **Data Transport Handler:** Dedicated Python ETL worker that reads clean delta loads from MongoDB, flattens the nested JSON documents into tabular schemas, and batches them into Google BigQuery using optimized append jobs.
+* **Core Analytics Warehouse:** Google BigQuery (GCP). Serves as the centralized, enterprise-grade analytical storage layer containing raw historical tables (`raw_earthquakes`).
+* **Transformation Engine:** dbt (Data Build Tool). 
+  * dbt connects directly to BigQuery, orchestrating standard SQL transformations directly inside the warehouse environment via push-down compute.
+  * **Processing Cycle:** dbt reads `raw_earthquakes` -> applies business logic, deduplication, time-zone alignment, and geographical categorization models -> writes the output back into production-ready analytical tables/views (`mart_seismic_summary`).
+
+#### Phase C: Business Intelligence & Advanced Analytics Layer
+* **Exploratory Data Analysis (EDA Pipeline):** A Python execution runtime (Jupyter/VS Code) reads the transformed, aggregated schemas directly from BigQuery via the `google-cloud-bigquery` library. This is where advanced statistical sampling, reliability classifications, and trend investigations are developed.
+* **Visualization Engine:** Power BI. Connects to the final dbt-curated BigQuery datasets using native GCP connectors (DirectQuery or Scheduled Import Mode). Power BI consumes clean, high-performance structured datasets to build interactive geospatial and temporal tracking dashboards.
+
+
+
+
+### 📥 Data Ingestion & Staging (API to MongoDB)
 
 This section contains the Python script responsible for streaming real-time earthquake data from the USGS API into MongoDB. It includes built-in deduplication to ensure data integrity.
 
