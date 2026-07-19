@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: MKBJ_Warehouse
+    database: dbt-learning-493706
+    schema: MKBJ_Warehouse
+    tables:
+      - name: Raw_categories
+      - name: Raw_customers
+      - name: Raw_products
