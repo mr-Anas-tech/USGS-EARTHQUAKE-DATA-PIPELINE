@@ -3,6 +3,7 @@
 ================================================================================
 
 ### 1. High-Level Data Flow Topology
+```
 [USGS API] ---> (Python Ingestion) ---> [MongoDB Atlas (Staging)]
                                               |
                                        (Batch Extraction)
@@ -17,8 +18,7 @@
    +---> [Python Environment (Exploratory Data Analysis / EDA)]
    |
    +---> [Power BI Desktop/Service (Executive Dashboards)]
-
----
+```
 
 ### 2. Architectural Components & Deep Technical Breakdown
 
