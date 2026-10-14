@@ -1,6 +1,4 @@
-================================================================================
-      DATA ENGINEERING ARCHITECTURE & PIPELINE SPECIFICATION
-================================================================================
+#    DATA ENGINEERING ARCHITECTURE & PIPELINE SPECIFICATION
 
 ### 1. High-Level Data Flow Topology
 ```
